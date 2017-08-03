@@ -241,34 +241,6 @@ CSV.foreach("accounts.txt", {headers: true, return_headers: false}) do |row|
 end
 
 
-
-puts ("priya #{pbalance_totals.sum}")
-puts "categories | total spent | average transaction"
-puts ("allowance #{pallowance_totals.sum} #{pallowance_average.round(2)}")
-puts ("car repairs #{pcar_totals.sum} #{pcar_average.round(2)}")
-puts ("rent #{prent_totals.sum} #{prent_average.round(2)}")
-puts ("entertainment #{pent_totals.sum} #{pent_average.round(2)}")
-puts ("fuel #{pfuel_totals.sum} #{pfuel_average.round(2)}")
-puts ("groceries #{pgroceries_totals.sum.round(2)} #{pgroceries_average.round(2)}")
-puts ("meals #{pmeals_totals.sum} #{pmeals_average.round(2)}")
-puts ("clothes #{pclothes_totals.sum} #{pclothes_average.round(2)}")
-puts ("education #{peducation_totals.sum} #{peducation_average.round(2)}")
-puts ("donations #{pdonations_totals.sum} #{pdonations_average.round(2)}")
-puts ("utilities #{putilities_totals.sum} #{putilities_average.round(2)}")
-puts ("gifts #{pgifts_totals.sum} #{pgifts_average.round(2)}")
-puts ("sonia #{sbalance_totals.sum}")
-puts ("#{sallowance_totals.sum} #{sallowance_average.round(2)}")
-puts ("#{shouse_totals.sum} #{shouse_average.round(2)}")
-puts ("#{sclothes_totals.sum} #{sclothes_average.round(2)}")
-puts ("#{sent_totals.sum} #{sent_average.round(2)}")
-puts ("#{sutilities_totals.sum} #{sutilities_average.round(2)}")
-puts ("#{sgroceries_totals.sum.round(2)} #{sgroceries_average.round(2)}")
-puts ("#{seducation_totals.sum} #{seducation_average.round(2)}")
-puts ("#{sgifts_totals.sum.round(2)} #{sgifts_average.round(2)}")
-puts ("#{sgym_totals.sum} #{sgym_average.round(2)}")
-puts ("#{smed_totals.sum.round(2)} #{smed_average.round(2)}")
-
-
 puts ("==================================================================")
 puts ("Account: Priya...Balance: $#{pbalance_totals.sum}")
 puts ("==================================================================")
