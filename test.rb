@@ -6,22 +6,22 @@ data = {}
 CSV.foreach("accounts.txt", {headers: true, return_headers: false}) do |row|
         inflow = row["Inflow"].gsub(/[^\d\.]/, '').to_f
         outflow = row["Outflow"].gsub(/[^\d\.]/, '').to_f
-        a = row ["Account"].chomp
-        category = row ["Category"]
-
+        accounts = row ["Account"].chomp
+        category = row ["Category"].chomp
         amount = (inflow - outflow)
 
-        if data[a] == nil
-            data[a] = {}
-        # else
-            # data[a] = data[a] + (inflow - outflow)
+
+        if data[accounts] == nil
+            data[accounts] = {}
+
         end
 
-        if data[a][category] == nil
-            data[a][category] = []
-        end
+        if data[accounts][category] == nil
+            data[accounts][category] = [amount]
 
-        if data[a][category]
+        else data[accounts][category]+= [amount]
+
+        end
 
         # if soniatable[b] == nil
         #    soniatable[b] = (inflow - outflow)
@@ -30,7 +30,20 @@ CSV.foreach("accounts.txt", {headers: true, return_headers: false}) do |row|
         # end
 end
 
-puts data
+data.each  do |account, categories|
+  puts "============================"
+  puts "#{account}"
+  puts "============================"
+  puts "Category    | Total Spent | Average Transaction   "
+  puts "----------------------------"
+  categories.each do |category,transactions|
+    puts "#{category}  #{transactions.sum.round(2)}"
+  end
+end
+
+
+# puts data
+
 
 
 # data = 
@@ -54,3 +67,4 @@ puts data
 #         "fueld" => [3243423, 423423]
 #     }
 # }
+
