@@ -62,6 +62,15 @@ categories.each do |category, transactions|
   end
   end
 
+elsif input_array.include? "csv"
+
+data.each do |account, categories|
+  puts "Category, Total Spent, Average Transaction"
+categories.each do |category, transactions|
+  puts "#{category}, $#{transactions.sum.round(2)}, $#{(transactions.sum.round(2)/transactions.count).round(2)}"
+end
+end
+
 else
 
 data.each  do |account, categories|
